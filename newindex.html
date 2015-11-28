@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MRTA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/justified-nav.css" rel="stylesheet">
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
+<!-- Place either at the bottom in the <head> of your page or inside your CSS -->
+<style type="text/css">
+    .flex-caption {
+      width: 100%;
+      padding: 2%;
+      left: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.5);
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+      font-size: 14px;
+      line-height: 18px;
+    }
+    li.css a {
+      border-radius: 0;
+    },
+body{
+	padding-top: 50px;
+}
+</style>
+</head>
+<body>
+
+
+
+<nav class="navbar navbar-fixed-top">
+  <div class="container" >
+    <ul class="nav nav-justified">
+    	<li><a>การรถไฟฟ้าขนส่งมวลชนแห่งประเทศไทย</a></li>
+    	<li><a>ประวัติความเป็นมา</a></li>
+    	<li><a>ระบบสมาชิก</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container" style="width:850px;">
+	<div id="main" role="main">
+      <section class="slider">
+        <div class="flexslider">
+          <ul class="slides">
+  	    		<li>
+  	    	    <img src="image/BTS01-1.jpg">
+              	<p class="flex-caption">MRTA We elevate metro life</p>
+  	    		</li>
+  	    		<li>
+  	    	    <img src="image/1382589629-bts04-o.jpg">
+              	<p class="flex-caption">MRTA We elevate metro life</p>
+  	    		</li>
+  	    		<li>
+  	    	    <img src="image/B9ABBCFA135141B4A35E0D9F52E039D1.jpg">
+              	<p class="flex-caption">MRTA We elevate metro life</p>
+  	    		</li>
+  	    		<li>
+  	    	    <img src="image/74.jpg">
+              	<p class="flex-caption">MRTA We elevate metro life</p>
+  	    		</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+</div>
+  <!-- jQuery -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>
+  <!-- FlexSlider -->
+  <script defer src="js/jquery.flexslider-min.js"></script>
+
+  <script type="text/javascript">
+    $(window).load(function(){
+      $('.flexslider').flexslider({
+        animation: "slide"
+      });
+    });
+  </script>
+</body>
+</html>
