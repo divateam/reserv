@@ -24,49 +24,49 @@
     }
 @media (min-width: 100px) {
   .swiper-container {
-    width: 290px;
+    
     height: 190px;
   }
 }
 @media (min-width: 320px) {
   .swiper-container {
-    width: 300px;
+    
     height: 140px;
   }
 }
 @media (min-width: 500px) {
   .swiper-container {
-    width: 500px;
+    
     height: 250px;
   }
 }
 @media (min-width: 768px) {
   .swiper-container {
-    width: 500px;
+   
     height: 350px;
   }
 }
 @media (min-width: 992px) {
   .swiper-container {
-    width: 970px;
+    
     height: 400px;
   }
 }
 @media (min-width: 1200px) {
   .swiper-container {
-    width: 1170px;
+    
     height: 600px;
   }
 }
 @media (min-width: 1980px) {
   .swiper-container {
-    width: 1800px;
+    
     height: 1000px;
   }
 }
 @media (min-width: 2200px) {
   .swiper-container {
-    width: 2200px;
+   
     height: 1200px;
   }
 }
