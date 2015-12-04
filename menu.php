@@ -3,10 +3,20 @@
 <head>
 <meta charset="utf-8">
 <title>Menu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="icon" href="image/favicon.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 </head>
 <body>
+<?php
+		include("conn.php");
+		session_start();
+		if($_SESSION["username"] == null){
+			$_SESSION["loginstatus"] = "pleaselogin";
+			header("location:login.php");
+		}
+?>
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -41,7 +51,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>&nbsp; สมาชิก <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#"><span class="glyphicon glyphicon-off"></span>&nbsp;ออกจากระบบ</a></li>
+            <li><a href="logoutAction.php"><span class="glyphicon glyphicon-off"></span>&nbsp;ออกจากระบบ</a></li>
           </ul>
         </li>
       </ul>

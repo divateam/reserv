@@ -20,9 +20,9 @@
   	
 	<?php
 		include("conn.php");
+		session_start();
 		$usernameLogin = $_POST["username"];
 		$passwordLog= $_POST["password"];
-		$repasswordLogin = $_POST["repassword"];
 		
 		$sqlQuery = "select * from employee where username = '".$usernameLogin."' and password = '".$passwordLog."'";
 		
@@ -32,13 +32,14 @@
 			
 			$_SESSION["emp_name"] = $result["emp_name"];
 			$_SESSION["username"] = $result["username"];
+			
+			header("location:menu.php");
+		}else{
+			$_SESSION["loginstatus"] = 'fail';
+			header("location:login.php");
 		}
 		
 	?>
-    <p>ยินดีต้อนรับ</p><br/>
-    <p>ชื่อ : <?php echo $result["emp_name"]; ?></p><br/>
-    <p>นามสกุล : <?php echo $result["emp_lastname"]; ?></p><br/>
-	<input type="button" onclick="location.href='index.html';" value="Go to index" />
   </div>
   <div class="col-md-4">
   	
