@@ -8,6 +8,7 @@
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">
+<link href="css/sweetalert.css" rel="stylesheet">
 <style>
 body { padding-top: 70px; }
 </style>
@@ -17,7 +18,7 @@ body { padding-top: 70px; }
 <div class="container">
 	<h1 class="text-center">Reserv Room</h1>
 	<div class="row"><hr class="bg-brown"/></div>
-	<form method="post" action="index.php">
+	<form method="post" action="reserv-roomAction.php">
 	<div class="row">&nbsp;</div>
 		<div class="form-group">
 			<label for="username" class="col-sm-3 control-label">จองห้องประชุม</label>
@@ -62,7 +63,7 @@ body { padding-top: 70px; }
 		<div class="form-group">
 			<label for="username" class="col-sm-3 control-label">เริ่มจองเวลา </label>
 			<div class="col-sm-7">
-				<select class="form-control" name="room_id" required>
+				<select class="form-control" name="starttime" required>
 					<option value="">กรุณาเลือกเวลาที่ต้องการเริ่มจองค่ะ</option>
 					<option value="07:00">07:00 น.</option>
 					<option value="08:00">08:00 น.</option>
@@ -93,10 +94,21 @@ body { padding-top: 70px; }
 		<div class="col-md-4"></div>
 		
 	</form>
+	<input type="hidden" name="reservStatus" id="reservStatus" value="
+	<?php 
+	if(isset($_SESSION["reservStatus"]) != null){
+	
+		$reservStatus = $_SESSION["reservStatus"];
+		echo $reservStatus;
+		$_SESSION["reservStatus"] = null;
+	}
+	?>
+	">
 </div>
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap-datepicker.min.js"></script>
+<script src="js/sweetalert.min.js"></script>
 <script type="text/javascript">
 $(function() {
 	$('#date_reserv').datepicker({
@@ -105,6 +117,13 @@ $(function() {
 	    autoclose: true,
 	    todayBtn: "linked"
 	});
+
+	//sweet alert Start
+	if($.trim($("#reservStatus").val()) == "failed"){
+		swal("ไม่สามารถจองได้", "ห้องและเวลาที่ท่านเลือกมีการจองไว้แล้วค่ะ", "error");
+	}
+	//sweet alert End
+	
 });
 
 </script>
