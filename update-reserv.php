@@ -115,7 +115,7 @@ body { padding-top: 70px; }
 		<div class="row"><hr class="bg-brown"/></div>
 		
 		<div class="text-center">
-			<button type="submit" class="btn btn-primary">ยินยันการแก้ไข</button> &nbsp; <a href="delete-reservAction.php?reserv_id=<?=$resultReserv["reserv_id"] ?>" class="btn btn-danger">ยกเลิก</a>
+			<button type="submit" class="btn btn-primary">ยินยันการแก้ไข</button> &nbsp; <a href="delete-reservAction.php?reserv_id=<?=$resultReserv["reserv_id"] ?>" class="btn btn-success">ลบข้อมูล</a>&nbsp; <a href="calendar.php" class="btn btn-danger">ยกเลิก</a>
 		</div>
 		
 		<!-- Hidden For Jquery -->
