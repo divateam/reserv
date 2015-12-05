@@ -31,9 +31,7 @@
             <li role="separator" class="divider"></li>
             <li><a href="calendar.php"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูตารางการจอง</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูรูปห้องประชุม</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูแผนผังห้องประชุม</a></li>
+            <li><a href="roomtype.php"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูรูปห้องประชุม</a></li>
           </ul>
         </li>
       </ul>
