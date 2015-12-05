@@ -30,7 +30,7 @@
             <li><a href="reserv-room.php"><span class="glyphicon glyphicon-edit"></span>&nbsp;จองห้องประชุม</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;แนบเอกสาร</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="#"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูตารางการจอง</a></li>
+            <li><a href="calendar.php"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูตารางการจอง</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="#"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูรูปห้องประชุม</a></li>
             <li role="separator" class="divider"></li>

@@ -16,7 +16,7 @@ while ($result = mysql_fetch_array($sqlQuery)){
 			"title" => $result["reserv_description"],
 			"start" => $result["reserv_start"],
 			"end" => $result["reserv_end"],
-			
+			"url" => "update-reserv.php?reserv_id=".$result["reserv_id"]
 	);
 }
 

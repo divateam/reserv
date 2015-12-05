@@ -2,13 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>MRTA | Reserv Room</title>
+<title>MRTA | Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="icon" href="image/favicon.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">
-<link href="css/sweetalert.css" rel="stylesheet">
+
 <style>
 body { padding-top: 70px; }
 </style>
@@ -19,6 +18,22 @@ body { padding-top: 70px; }
 	<h1 class="text-center">Reserv Room</h1>
 	<div class="row"><hr class="bg-brown"/></div>
 	<form method="post" action="reserv-roomAction.php">
+	<?php 
+		$strQuery = "SELECT "
+		."reserv_id, "
+		."username, "
+		."room_id, "
+		."DATE_FORMAT(reserv_start,'%Y-%m-%d') as date_reserv, "
+		."DATE_FORMAT(reserv_start,'%H:%i') as starttime, "
+		."reserv_description, "
+		."TIME_FORMAT(TIMEDIFF(reserv_end,reserv_start),'%H') as timetoreserv "
+		."FROM `reserv` "
+		."where reserv_id = '".$_GET["reserv_id"]."'";
+
+		$sqlQuery = mysql_query($strQuery);
+		
+		$resultReserv = mysql_fetch_array($sqlQuery);
+	?>
 	<div class="row">&nbsp;</div>
 		<div class="form-group">
 			<label for="room_id" class="col-sm-3 control-label">จองห้องประชุม</label>
@@ -55,7 +70,7 @@ body { padding-top: 70px; }
 		<div class="form-group">
 			<label for="date_reserv" class="col-sm-3 control-label">วันที่จอง </label>
 			<div class="col-sm-7">
-				<input type="text" class="form-control" name="date_reserv" id="date_reserv" placeholder="Date Reserv" required>
+				<input type="text" class="form-control" name="date_reserv" id="date_reserv" placeholder="Date Reserv" value="<?=$resultReserv["date_reserv"] ?>" required>
 			</div>
 		</div>
 		<div class="row"><hr class="bg-brown"/></div>
@@ -63,7 +78,7 @@ body { padding-top: 70px; }
 		<div class="form-group">
 			<label for="starttime" class="col-sm-3 control-label">เริ่มจองเวลา </label>
 			<div class="col-sm-7">
-				<select class="form-control" name="starttime" required>
+				<select class="form-control" name="starttime" id="starttime" required>
 					<option value="">กรุณาเลือกเวลาที่ต้องการเริ่มจองค่ะ</option>
 					<option value="07:00">07:00 น.</option>
 					<option value="08:00">08:00 น.</option>
@@ -85,7 +100,7 @@ body { padding-top: 70px; }
 		<div class="form-group">
 			<label for="hourtime" class="col-sm-3 control-label">ระยะเวลาในการจอง </label>
 			<div class="col-sm-7">
-				<input type="text" class="form-control" name="hourtime" id="hourtime" placeholder="ระยะเวลาในการจอง (นับเป็นชั่วโมง)" required>
+				<input type="text" class="form-control" name="hourtime" id="hourtime" placeholder="ระยะเวลาในการจอง (นับเป็นชั่วโมง)" value="<?=$resultReserv["timetoreserv"] ?>" required>
 			</div>
 		</div>
 		<div class="row"><hr class="bg-brown"/></div>
@@ -93,7 +108,7 @@ body { padding-top: 70px; }
 		<div class="form-group">
 			<label for="description" class="col-sm-3 control-label">หัวข้อการจอง </label>
 			<div class="col-sm-7">
-				<input type="text" class="form-control" name="description" id="description" placeholder="หัวข้อการจอง" required>
+				<input type="text" class="form-control" name="description" id="description" placeholder="หัวข้อการจอง" value="<?=$resultReserv["reserv_description"] ?>" required>
 			</div>
 		</div>
 		<div class="row"><hr class="bg-brown"/></div>
@@ -101,43 +116,20 @@ body { padding-top: 70px; }
 		<div class="text-center">
 			<button type="submit" class="btn btn-primary">ยินยันการจอง</button> &nbsp; <a href="dashboard.php" class="btn btn-danger">ยกเลิก</a>
 		</div>
+		
+		<!-- Hidden For Jquery -->
+		<input type="hidden" id="forRoom_id" value="<?=$resultReserv["room_id"] ?>">
+		<input type="hidden" id="forStarttime" value="<?=$resultReserv["starttime"] ?>">
+		
 	</form>
 </div>
-	
-	<input type="hidden" name="reservStatus" id="reservStatus" value="
-	<?php 
-	if(isset($_SESSION["reservStatus"]) != null){
-	
-		$reservStatus = $_SESSION["reservStatus"];
-		echo $reservStatus;
-		$_SESSION["reservStatus"] = null;
-	}
-	?>
-	">
-
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/sweetalert.min.js"></script>
 <script type="text/javascript">
-$(function() {
-	$('#date_reserv').datepicker({
-	    format: "yyyy-mm-dd",
-	    clearBtn: true,
-	    autoclose: true,
-	    todayBtn: "linked"
+	$(function(){
+		$('#room_id').val($('#forRoom_id').val());
+		$('#starttime').val($('#forStarttime').val());
 	});
-
-	//sweet alert Start
-	if($.trim($("#reservStatus").val()) == "failed"){
-		swal("ไม่สามารถจองได้", "ห้องและเวลาที่ท่านเลือกมีการจองไว้แล้วค่ะ", "error");
-	}
-
-	
-	//sweet alert End $('#room_id').val("5");
-	
-});
-
 </script>
 </body>
 </html>

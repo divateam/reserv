@@ -32,6 +32,11 @@ body { padding-top: 70px; }
 	$(document).ready(function() {
 
 		$('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek,agendaDay'
+			},
 			defaultDate: '2015-12-12',
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
