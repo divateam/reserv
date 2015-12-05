@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <link rel="icon" href="image/favicon.ico">
-<title>ระบบจองห้องประชุมregister</title>
+<title>MRTA | Register</title>
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
 <link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">

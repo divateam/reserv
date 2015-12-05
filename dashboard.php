@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Dashboard</title>
+<title>MRTA | Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="icon" href="image/favicon.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">
