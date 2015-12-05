@@ -28,7 +28,6 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;ห้องประชุม <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="reserv-room.php"><span class="glyphicon glyphicon-edit"></span>&nbsp;จองห้องประชุม</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-folder-open"></span>&nbsp;แนบเอกสาร</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="calendar.php"><span class="glyphicon glyphicon-search"></span>&nbsp;ดูตารางการจอง</a></li>
             <li role="separator" class="divider"></li>

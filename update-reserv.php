@@ -15,9 +15,9 @@ body { padding-top: 70px; }
 <body>
 <?php include 'menu.php';?>
 <div class="container">
-	<h1 class="text-center">Reserv Room</h1>
+	<h1 class="text-center">Update & Delete Reserv Room</h1>
 	<div class="row"><hr class="bg-brown"/></div>
-	<form method="post" action="reserv-roomAction.php">
+	<form method="post" action="update-reservAction.php">
 	<?php 
 		$strQuery = "SELECT "
 		."reserv_id, "
@@ -29,6 +29,7 @@ body { padding-top: 70px; }
 		."TIME_FORMAT(TIMEDIFF(reserv_end,reserv_start),'%H') as timetoreserv "
 		."FROM `reserv` "
 		."where reserv_id = '".$_GET["reserv_id"]."'";
+		
 
 		$sqlQuery = mysql_query($strQuery);
 		
@@ -114,10 +115,11 @@ body { padding-top: 70px; }
 		<div class="row"><hr class="bg-brown"/></div>
 		
 		<div class="text-center">
-			<button type="submit" class="btn btn-primary">ยินยันการจอง</button> &nbsp; <a href="dashboard.php" class="btn btn-danger">ยกเลิก</a>
+			<button type="submit" class="btn btn-primary">ยินยันการแก้ไข</button> &nbsp; <a href="delete-reservAction.php?reserv_id=<?=$resultReserv["reserv_id"] ?>" class="btn btn-danger">ยกเลิก</a>
 		</div>
 		
 		<!-- Hidden For Jquery -->
+		<input type="hidden" id="reserv_id" name="reserv_id" value="<?=$resultReserv["reserv_id"] ?>">
 		<input type="hidden" id="forRoom_id" value="<?=$resultReserv["room_id"] ?>">
 		<input type="hidden" id="forStarttime" value="<?=$resultReserv["starttime"] ?>">
 		
