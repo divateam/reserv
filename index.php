@@ -1,71 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>ระบบจองห้องประชุมindex</title>
+<meta charset="UTF-8">
+<title>MRTA</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="icon" href="image/favicon.ico">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-theme.min.css" rel="stylesheet">
+<link href="css/swiper.css" rel="stylesheet">
+<link href="css/StyleSwiper.css" rel="stylesheet">
+<link href="css/uikit.gradient.css" rel="stylesheet">
+<!-- Place either at the bottom in the <head> of your page or inside your CSS -->
 </head>
-
 <body>
-<table width="971" height="852" border="0" align="center">
-  <tbody>
-    <tr>
-      <td height="220" colspan="2"><img src="image/logo.jpg" width="251" height="251" alt=""/><img src="image/head.jpg" width="712" height="251" alt=""/></td>
-    </tr>
-    <tr>
-      <td height="88" colspan="2"><table width="964" border="0">
-        <tbody>
-          <tr align="right" valign="top">
-            <td width="185" height="82" align="center" valign="top"><a href="index.html"><input name="imageField" type="image" id="imageField" src="image/back-button.png" width="185" height="80"></td>
-            <td width="185" align="center" valign="top"><input name="imageField2" type="image" id="imageField2" src="image/pic02.png" width="185" height="80"></td>
-            <td width="185" align="center" valign="top"><input name="imageField3" type="image" id="imageField3" src="image/pic03.png" width="185" height="80"></td>
-            <td width="185" align="center" valign="top"><a href="register.php"><input name="imageField4" type="image" id="imageField4" src="image/pic04.png" width="185" height="80"></td>
-            <td width="185" align="center" valign="top"><a href="Login.php"><input name="imageField5" type="image" id="imageField5" formaction="Login.php" formmethod="GET" src="image/pic05.png" width="185" height="80"></td>
-          </tr>
-        </tbody>
-      </table></td>
-    </tr>
-    <tr>
-      <td width="192" height="70"><input type="image" name="imageField10" id="imageField10" src="image/img10.png"></td>
-      <td width="769" rowspan="8" align="center" valign="top"><p>
-        </p>
-      </p>
-        <form method="post" name="form1" target="_top" id="form1">
-<img src="image/pic01.jpg" width="650" height="400" alt="" align="center"/>
-        </form>
-        <form id="form2" name="form2" method="post">
-          <p><a title="" href="http://guru.sanook.com/" target="">การรถไฟฟ้าขนส่งมวลชนแห่งประเทศไทย หรือ รฟม.</a><br> จัดตั้งขึ้นตามพระราชบัญญัติการรถไฟฟ้าขนส่งมวลชนแห่งประเทศไทย พ.ศ. 2543 ซึ่งได้ประกาศในราชกิจจานุเบกษา <br>
-            เมื่อวันที่ 1 ธันวาคม 2543 โดยมีผลบังคับใช้ในวันที่ 2 ธันวาคม 2543 เป็นต้นไป โดยใช้ชื่อภาษา-อังกฤษว่า<br> MASS RAPID TRANSIT AUTHORITY OF THAILAND (MRTA)</p>
-        </form></td>
-    </tr>
-    <tr>
-      <td height="70"><input type="image" name="imageField6" id="imageField6" src="image/img11.png"></td>
-    </tr>
-    <tr>
-      <td height="70"><input type="image" name="imageField7" id="imageField7" src="image/img02.png"></td>
-    </tr>
-    <tr>
-      <td height="70"><input type="image" name="imageField8" id="imageField8" src="image/img03.png"></td>
-    </tr>
-    <tr>
-      <td height="70"><input type="image" name="imageField9" id="imageField9" src="image/img04.png"></td>
-    </tr>
-    <tr>
-      <td height="70"><input type="image" name="imageField11" id="imageField11" src="image/img06.png"></td>
-    </tr>
-    <tr>
-      <td height="70"><input type="image" name="imageField12" id="imageField12" src="image/img07.png"></td>
-    </tr>
-    <tr>
-      <td height="70"><input type="image" name="imageField13" id="imageField13" src="image/img08.png"></td>
-    </tr>
-    <tr>
-      <td height="68" colspan="2" align="center" valign="middle"><form id="form3" name="form3" method="post">
-        <p>Copyright © 2015 MRTA All rights reserved.<br>
-          57018589 นายวงศการ ชัยชนะ<br>
-          57002427 นส.ยุพา อารีเอื้อ</p>
-      </form></td>
-    </tr>
-  </tbody>
-</table>
+
+<div class="container">
+<!-- Navbar Start -->
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+		    <div class="navbar-header">
+		      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		        <span class="sr-only">Toggle navigation</span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		        <span class="icon-bar"></span>
+		      </button>
+		      <a class="navbar-brand" href="index.php">MRTA การรถไฟฟ้า</a>
+		    </div>
+		    <div id="navbar" class="navbar-collapse collapse">
+		      <ul class="nav navbar-nav ">
+		        <li><a href="index.php">Home</a></li>
+		        <li><a href="index.php">Contact Us</a></li>
+		      </ul>
+		      <ul class="nav navbar-nav navbar-right">
+		        <li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Member <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		            <li><a href="login.php">Login</a></li>
+		            <li role="separator" class="divider"></li>
+		            <li><a href="register.php">Register</a></li>
+		          </ul>
+		        </li>
+		      </ul>
+		    </div><!--/.nav-collapse -->
+		</div><!--/.container-fluid -->
+	</nav>
+<!-- Navbar End -->
+<!-- Swiper -->
+	<div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+            <figure class="uk-overlay uk-overlay-hover">
+			    <img class="uk-overlay-scale" src="image/Bangkok_Skytrain_2011.jpg" width="100%" height="100%">
+			    <div class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background">dwfqfqfwqfqwfq</div>
+			</figure>
+			</div>
+            <div class="swiper-slide">
+            <figure class="uk-overlay uk-overlay-hover">
+			    <img class="uk-overlay-scale" src="image/34.png" width="100%" height="100%">
+			    <div class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background">dwfqfqfwqfqwfq</div>
+			</figure>
+			</div>
+            <div class="swiper-slide">
+            <figure class="uk-overlay uk-overlay-hover">
+			    <img class="uk-overlay-scale" src="image/maxresdefault.jpg" width="100%" height="100%">
+			    <div class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background">dwfqfqfwqfqwfq</div>
+			</figure>
+			</div>
+			<div class="swiper-slide">
+            <figure class="uk-overlay uk-overlay-hover">
+			    <img class="uk-overlay-scale" src="image/Bangkok_Skytrain_06.jpg" width="100%" height="100%">
+			    <div class="uk-overlay-panel uk-flex uk-flex-center uk-flex-middle uk-text-center uk-overlay-background">dwfqfqfwqfqwfq</div>
+			</figure>
+			</div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+<!-- Swiper END -->
+<div class="row">&nbsp;</div>
+
+<div class="row text-center">
+	<h1>ประวัติ</h1>
+</div>
+  <div class="row">&nbsp;</div>
+  <div class="row">
+  	<div class="col-md-6 col-lg-6">
+  		<img src="image/BTS01.jpg" class="img-responsive img-thumbnail">
+  	</div>
+   <div class="col-lg-6 text-center">
+	    <p>ปี พ.ศ. 2514 รัฐบาลไทยได้รับความช่วยเหลือจากรัฐบาลเยอรมันส่งคณะผู้เชี่ยวชาญมาทำการศึกษา สำรวจ และวางแผนแม่บทสำหรับการจราจรและขนส่งในกรุงเทพมหานคร ซึ่งได้เสนอแนะให้มีระบบรถขนส่งมวลชนแบบเร็ว (Mass Rapid Transit System) เพื่อแก้ไขปัญหาการเดินทางและการจราจรในกรุงเทพมหานคร จึงได้มี “ประกาศของคณะปฏิวัติ ฉบับที่ 290 ลงวันที่ 27 พฤศจิกายน พุทธศักราช 2515” จัดตั้ง “การทางพิเศษแห่งประเทศไทย” ขึ้น เพื่อจัดสร้าง “ทางพิเศษ” ซึ่งประกอบด้วย
+		ระบบทางด่วน (Express Way)
+		ระบบรถไฟฟ้าขนส่งมวลชน (Mass Rapid Transit System)
+		การทางพิเศษแห่งประเทศไทย
+		</p>
+	</div>
+</div>
+   
+</div>
+  <!-- jQuery -->
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.smooth-scroll.js"></script>
+<script src="js/swiper.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        paginationClickable: true,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false,
+        loop:true
+    });
+    </script>
+    <!-- Initialize Swiper -->
 </body>
 </html>

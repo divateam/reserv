@@ -19,6 +19,7 @@
         <label for="password" class="sr-only">Password</label>
         <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <a href="index.php" class="btn btn-lg btn-success btn-block">กลับสู่หน้าหลัก</a>
         <input type="hidden" id="loginstatus" name="loginstatus" value="
         <?php 
         	session_start();

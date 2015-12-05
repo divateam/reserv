@@ -33,7 +33,7 @@
 			$_SESSION["emp_name"] = $result["emp_name"];
 			$_SESSION["username"] = $result["username"];
 			
-			header("location:menu.php");
+			header("location:dashboard.php");
 		}else{
 			$_SESSION["loginstatus"] = 'fail';
 			header("location:login.php");

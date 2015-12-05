@@ -13,17 +13,18 @@ $teloftable= $_POST["teloftable"];
 
 $sqlQuery = "insert into employee (username,password,emp_name,emp_lastname,emp_dob,position_id,part,tel,teloftable) 
 		values ('".$username."','".$password."','".$name."','".$lastname."','".$DoB."','".$position."','".$part."','".$tel."','".$teloftable."')";
-		
-
-?>
-<br/>
-<?php
 
 $Query=mysql_query($sqlQuery);
+session_start();
 if($Query){
-	echo "Insert Success";
+	
+	$_SESSION["emp_name"] = $name;
+	$_SESSION["username"] = $username;
+	header("location:dashboard.php");
 }else{
-	echo "Insert Failed";
+	
+	$_SESSION["registerStatus"] = "failed";
+	header("location:register.php");
 }
 
 mysql_close();
