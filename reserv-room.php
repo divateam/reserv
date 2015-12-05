@@ -21,9 +21,9 @@ body { padding-top: 70px; }
 	<form method="post" action="reserv-roomAction.php">
 	<div class="row">&nbsp;</div>
 		<div class="form-group">
-			<label for="username" class="col-sm-3 control-label">จองห้องประชุม</label>
+			<label for="room_id" class="col-sm-3 control-label">จองห้องประชุม</label>
 			<div class="col-sm-7">
-			<select class="form-control" name="room_id" required>
+			<select class="form-control" name="room_id" id="room_id" required>
 			  <option value="">กรุณาเลือกห้องที่ต้องการจองด้วยค่ะ</option>
 			  <?php 
 			  	$strQuery ="SELECT "
@@ -53,7 +53,7 @@ body { padding-top: 70px; }
 		<div class="row"><hr class="bg-brown"/></div>
 		
 		<div class="form-group">
-			<label for="username" class="col-sm-3 control-label">วันที่จอง </label>
+			<label for="date_reserv" class="col-sm-3 control-label">วันที่จอง </label>
 			<div class="col-sm-7">
 				<input type="text" class="form-control" name="date_reserv" id="date_reserv" placeholder="Date Reserv" required>
 			</div>
@@ -61,7 +61,7 @@ body { padding-top: 70px; }
 		<div class="row"><hr class="bg-brown"/></div>
 		
 		<div class="form-group">
-			<label for="username" class="col-sm-3 control-label">เริ่มจองเวลา </label>
+			<label for="starttime" class="col-sm-3 control-label">เริ่มจองเวลา </label>
 			<div class="col-sm-7">
 				<select class="form-control" name="starttime" required>
 					<option value="">กรุณาเลือกเวลาที่ต้องการเริ่มจองค่ะ</option>
@@ -83,12 +83,21 @@ body { padding-top: 70px; }
 		<div class="row"><hr class="bg-brown"/></div>
 		
 		<div class="form-group">
-			<label for="username" class="col-sm-3 control-label">ระยะเวลาในการจอง </label>
+			<label for="hourtime" class="col-sm-3 control-label">ระยะเวลาในการจอง </label>
 			<div class="col-sm-7">
 				<input type="text" class="form-control" name="hourtime" id="hourtime" placeholder="ระยะเวลาในการจอง (นับเป็นชั่วโมง)" required>
 			</div>
 		</div>
 		<div class="row"><hr class="bg-brown"/></div>
+		
+		<div class="form-group">
+			<label for="description" class="col-sm-3 control-label">หัวข้อการจอง </label>
+			<div class="col-sm-7">
+				<input type="text" class="form-control" name="description" id="description" placeholder="หัวข้อการจอง" required>
+			</div>
+		</div>
+		<div class="row"><hr class="bg-brown"/></div>
+		
 		<div class="col-md-4"></div>
 		<div class="col-md-4"><button type="submit" class="btn btn-primary">ยินยันการจอง</button> &nbsp; <a href="dashboard.php" class="btn btn-danger">ยกเลิก</a></div>
 		<div class="col-md-4"></div>
@@ -122,7 +131,9 @@ $(function() {
 	if($.trim($("#reservStatus").val()) == "failed"){
 		swal("ไม่สามารถจองได้", "ห้องและเวลาที่ท่านเลือกมีการจองไว้แล้วค่ะ", "error");
 	}
-	//sweet alert End
+
+	
+	//sweet alert End $('#room_id').val("5");
 	
 });
 

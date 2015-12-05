@@ -5,6 +5,7 @@ $room_id = $_POST["room_id"];
 $date_reserv = $_POST["date_reserv"];
 $starttime = $_POST["starttime"];
 $hourtime = $_POST["hourtime"];
+$description = $_POST["description"];
 $strQuery = "SELECT "
 		."a.reserv_id, "
 		."a.username, "
@@ -25,8 +26,11 @@ if($result = mysql_fetch_array($sqlQuery)){
 	header("location:reserv-room.php");
 }else{
 	//Room not is booking
-	$strQuery = "insert into reserv (username,room_id,reserv_start,reserv_end) VALUES ('".$_SESSION["username"]."','".$room_id."','".$date_reserv." ".$starttime."',DATE_ADD('".$date_reserv." ".$starttime."',INTERVAL ".$hourtime." HOUR))";
+	$strQuery = "insert into reserv (username,room_id,reserv_start,reserv_end,reserv_description) VALUES ('".$_SESSION["username"]."','".$room_id."','".$date_reserv." ".$starttime."',DATE_ADD('".$date_reserv." ".$starttime."',INTERVAL ".$hourtime." HOUR),'".$description."')";
+	
 	$sqlQuery = mysql_query($strQuery);
+	
+	header("location:calendar.php");
 }
 mysql_close();
 ?>
