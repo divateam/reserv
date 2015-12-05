@@ -7,7 +7,7 @@
 <link rel="icon" href="image/favicon.ico">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/bootstrap-theme.min.css" rel="stylesheet">
-
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet">
 <style>
 body { padding-top: 70px; }
 </style>
@@ -126,9 +126,18 @@ body { padding-top: 70px; }
 	</form>
 </div>
 <script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
 <script type="text/javascript">
 	$(function(){
+		$('#date_reserv').datepicker({
+		    format: "yyyy-mm-dd",
+		    clearBtn: true,
+		    autoclose: true,
+		    todayBtn: "linked"
+		});
+		
 		$('#room_id').val($('#forRoom_id').val());
 		$('#starttime').val($('#forStarttime').val());
 	});
